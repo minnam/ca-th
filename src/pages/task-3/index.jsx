@@ -6,6 +6,7 @@ import { generateTestData } from './utils/generate-test-data'
 /* Components =================================================================================== */
 import { Container } from '../../components/container'
 import { CollasibleItem } from './components/collapsible-item'
+import { Head } from '../../components/head'
 
 /* Constants ==================================================================================== */
 const TEST_DATA = [
@@ -39,6 +40,10 @@ const TEST_DATA = [
 /* <Task3 /> ==================================================================================== */
 export const Task3 = () => {
   return <div className={cn('min-h-screen', 'py-20')}>
+    <Head
+      title={'Task 3'}
+      desc={'Drill down & graphs'}
+    />
     <Container className={cn('p-2', 'flex', 'flex-col', 'items-center')}>
       <CollasibleItem
         title={'Users who did vote'}

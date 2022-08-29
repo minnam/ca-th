@@ -9,15 +9,20 @@ import { Collapsible } from '../../components/collapsible'
 import { Container } from '../../components/container'
 import { Grid } from '../../components/grid'
 import { GridItem } from '../../components/grid/grid-items'
+import { Head } from '../../components/head'
+import { Modal } from '../../components/modal'
 import { TimeSeriesGraph } from '../../components/time-series-graph'
 import { Title } from '../../components/title'
 import { Tooltip } from '../../components/tooltip'
-import { Modal } from '../../components/modal'
 
 /* <Home /> ===================================================================================== */
 export const Home = () => {
   return (
     <div className={cn('py-20')}>
+      <Head
+        title={'Take Home Assignment'}
+        desc={'Min Nam'}
+      />
       <Container>
         <div className={cn('p-3')}>
           <Title component='h3'>Links</Title>
