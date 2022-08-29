@@ -41,7 +41,7 @@ export const Header = () => {
             'hidden'
           )}
           links={[
-            { label: 'Blog', url: '/' },
+            { label: 'Blog', url: '/', active: true },
             { label: 'Use Cases', url: '/' }
           ]}
         />

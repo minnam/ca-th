@@ -16,7 +16,7 @@ const Header = ({
   $toggled,
   children,
   className,
-  css,
+  css = '',
   focused,
   toggled,
   ...props
@@ -24,7 +24,7 @@ const Header = ({
 
   return <div
     css={_css(`
-      ${css || ''}
+      ${css}
       background: ${focused ? COLORS['blue100'] : 'none'};      
       border-radius: .4rem .4rem ${toggled ? '0 0' : '.4rem .4rem'};
       width: 100%;
@@ -90,21 +90,22 @@ const Container = ({
   children,
   css,
   focused,
+  toggled,
   ...props
 }) => {
 
-  const [toggled, $toggled] = useState(props.toggled)
-  const [sequence, $sequence] = useSequence()
+  const [_toggled, $toggled] = useState(toggled)
+  const [, $sequence] = useSequence()
 
   useEffect(() => {
-    if (toggled !== undefined) {
-      if (toggled) {
+    if (_toggled !== undefined) {
+      if (_toggled) {
         $sequence.run(1, 2)
       } else {
         $sequence.run(3, 4)
       }
     }
-  }, [toggled])
+  }, [_toggled])
 
   return <div
     css={_css(`
@@ -114,13 +115,13 @@ const Container = ({
     `)}
     {...props}
   >
-    {React.cloneElement(children[0], { toggled, $toggled, focused })}
+    {children[0] && React.cloneElement(children[0], { toggled: _toggled, $toggled, focused })}
     <div
       style={{
-        maxHeight: toggled ? 'max-content' : '0px'
+        maxHeight: _toggled ? 'max-content' : '0px'
       }}
       css={_css(`        
-        overflow: hidden;
+        overflow: ${_toggled ? '' : 'hidden'};
         transition: .2s max-height ease-in-out;
       `)}
     >

@@ -11,7 +11,7 @@ export const Title = ({
   className,
   color,
   component = 'h1',
-  css,
+  css = '',
   gradient,
   ...props
 }) => {
@@ -19,7 +19,7 @@ export const Title = ({
 
   return <Component
     css={_css(`    
-      ${css || ''}
+      ${css}
       ${gradient ? CLASSNAMES.gradient : ''}
       ${color ? `color: ${COLORS[color] || color};` : ''}
     `)}
@@ -36,8 +36,8 @@ export const Title = ({
 /* Styles ======================================================================================= */
 const ELEMENT_CLASSNAMES = {
   'h1': cn(
-    'md:text-5xl',
-    'text-4xl',
+    'md:text-4xl',
+    'text-3xl',
     'font-semibold',
   ),
   'h2': cn(
@@ -68,7 +68,6 @@ const CLASSNAMES = {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     background-image: -webkit-gradient(linear, left top, right top, from(#df84ff), to(#9ed6ff));
-    background-image: linear-gradient(90deg, #df84ff, #9ed6ff);
-    line-height: 1.2;
+    background-image: linear-gradient(90deg, #df84ff, #9ed6ff);    
   `
 }

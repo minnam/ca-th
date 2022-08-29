@@ -1,7 +1,7 @@
-# Take-Home Challenge
+# Take-Home Challenge (Min Nam)
 
 ## Installation
-Run `npm install` and then `npm start` to run the application
+Run `npm install` and then `npm start` to run the application or go to https://coral-app-ynjwl.ondigitalocean.app/ 
 
 ## Used Packages
 - `create-react-app` to initiate the project
@@ -10,10 +10,25 @@ Run `npm install` and then `npm start` to run the application
 - Some dev enviornment setup: `prettier` and `eslint`
 
 ## Limitations
-- For the scope of this project, I have not implemented SSR. However, pages are wrapped with HOC which
-would have been done when server side rendered.
-- All the data that should be coming from API is mocked and somewhat mimicked.
+- For the scope of this project, I have not implemented SSR. However, I demonstrated wrapping `task-2` with HOC which
+would handle SSR and mimic API calls.
 
 ## How to navigate the project
-1. Go to https://localhost:3000
-   - I 
+1. Go to https://localhost:3000 or https://coral-app-ynjwl.ondigitalocean.app/ 
+2. See Task 1,2, and 3 pages, its source code, and components.
+
+## Interactive
+### Task 1
+- Mobile menu
+- Category Selector
+### Task 2
+- Mobile menu
+### Task 3
+- Time-series Graph
+
+## What can be improved
+- Time-series graph should be debounced with `requestAnimationFrame()` for better performance.
+- Overlapping x-axis label.
+
+## Out of scope
+- Ghost

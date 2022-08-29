@@ -69,9 +69,7 @@ export const Task1 = () => {
             {
               Object.keys(CONTENTS.categories).map((key) => {
                 return <GridItem key={key}>
-                  <Card
-                    {...CONTENTS.cards[key]}
-                  />
+                  <Card {...CONTENTS.cards[key]} />
                 </GridItem>
               })
             }
@@ -212,21 +210,21 @@ export const Task1 = () => {
             <LinkCard
               title='Technical Support'
               desc="Contact our support team."
-              icon=""
+              icon={'/icon-technical-support.svg'}
             />
           </GridItem>
           <GridItem>
             <LinkCard
               title='Analytic Support'
               desc="Contact our support team."
-              icon=""
+              icon={'/icon-analytical-support.svg'}
             />
           </GridItem>
           <GridItem>
             <LinkCard
               title='Admin Support'
               desc="Contact our support team."
-              icon=""
+              icon={'/icon-admin-support.svg'}
             />
           </GridItem>
         </Grid>
@@ -242,8 +240,8 @@ const STYLES = {
     color: 'white100'
   },
   default: {
-    bgColor: 'white100',
-    borderColor: 'white100',
+    bgColor: 'none',
+    borderColor: 'none',
     color: 'black100'
   },
 }
@@ -261,22 +259,27 @@ const CONTENTS = {
     'technologyStack': {
       title: 'Technology stack',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      icon: '/icon-technology-stack.svg'
     },
     'reports': {
       title: 'Reports',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      icon: '/icon-reports.svg'
     },
     'account': {
       title: 'Account',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      icon: '/icon-user.svg'
     },
     'features': {
       title: 'Features and use cases',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      icon: '/icon-features.svg'
     },
     'faqs': {
       title: 'FAQs',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      icon: '/icon-faqs.svg'
     },
   }
 }

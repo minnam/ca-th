@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { isMacOs } from 'react-device-detect'
 
 /* Common ======================================================================================= */
 import { cn } from '../../../../utils/cn'
@@ -51,7 +52,7 @@ export const Header = () => {
       <div className={cn('flex', 'items-center', 'justify-end')}>
         <ul className={cn('flex', 'items-center')}>
           <li className={cn('px-2', 'text-grey200', 'text-sm', 'xl:block', 'hidden',)}>
-            Press <KeyboardKey>cmd</KeyboardKey> + <KeyboardKey>k</KeyboardKey> for commands
+            Press <KeyboardKey>{isMacOs ? 'cmd' : 'ctrl'}</KeyboardKey> + <KeyboardKey>k</KeyboardKey> for commands
           </li>
           <li className={cn('px-2', 'text-white100', 'text-sm', 'hidden', 'align-center', 'justify-center', 'lg:flex')}>
             <span className="material-symbols-outlined">error</span>

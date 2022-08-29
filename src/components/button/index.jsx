@@ -11,7 +11,7 @@ export const Button = ({
   children,
   className,
   color = 'white100',
-  css,
+  css = '',
   fontSize,
   rounded,
   size = 'md',
@@ -26,7 +26,7 @@ export const Button = ({
       className
     )}
     css={_css(`
-      ${css ? css : ''}
+      ${css}
       ${BOX_SIZES[size]}
       ${fontSize ? `font-size: ${FONT_SIZES[fontSize] || fontSize};` : ''}
       ${rounded ? ROUND[size] : ''}      

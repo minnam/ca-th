@@ -1,7 +1,9 @@
 import { css } from '@emotion/react'
-import { COLORS } from '../../../../common/colors'
+
+/* Common ======================================================================================= */
 import { cn } from '../../../../utils/cn'
 
+/* <Card /> ===================================================================================== */
 export const Card = ({ title, desc, icon }) => {
   return <div
     className={cn(
@@ -15,7 +17,12 @@ export const Card = ({ title, desc, icon }) => {
       'bg-white100'
     )}
   >
-    {icon}
+    {icon && <div
+      className={cn('flex', 'items-center', 'justify-center', 'mb-2')}
+      css={css('width: 80px; height: 80px;')}
+    >
+      <img src={icon} loading="lazy" alt="" />
+    </div>}
     <h3
       className={cn(
         'text-lg',

@@ -1,5 +1,6 @@
 /* Common ======================================================================================= */
 import { cn } from '../../utils/cn'
+import { generateTestData } from '../task-3/utils/generate-test-data'
 
 /* Components =================================================================================== */
 import { Button } from '../../components/button'
@@ -12,7 +13,6 @@ import { TimeSeriesGraph } from '../../components/time-series-graph'
 import { Title } from '../../components/title'
 import { Tooltip } from '../../components/tooltip'
 import { Modal } from '../../components/modal'
-import { generateTestData } from '../task-3/utils/generate-test-data'
 
 /* <Home /> ===================================================================================== */
 export const Home = () => {
@@ -22,9 +22,21 @@ export const Home = () => {
         <div className={cn('p-3')}>
           <Title component='h3'>Links</Title>
           <ul className='mt-2'>
-            <li><a href='/task-1'>Task 1 (Knowledge Base)</a></li>
-            <li><a href='/task-2'>Task 2 (Blog)</a></li>
-            <li><a href='/task-3'>Task 3 (Time-series Graph)</a></li>
+            <li>
+              <a className='text-blue-500 hover:text-blue-400' href='/task-1'>
+                Task 1 (Knowledge Base)
+              </a>
+            </li>
+            <li>
+              <a className='text-blue-500 hover:text-blue-400' href='/task-2'>
+                Task 2 (Blog)
+              </a>
+            </li>
+            <li>
+              <a className='text-blue-500 hover:text-blue-400' href='/task-3'>
+                Task 3 (Time-series Graph)
+              </a>
+            </li>
           </ul>
         </div>
         <div className={cn('p-3', 'mt-10')}>
@@ -211,21 +223,30 @@ export const Home = () => {
           <Title component='h4'>Tooltip (resize window to see how it behaves)</Title>
         </div>
         <div className={cn('p-3', 'flex', 'justify-between')}>
-          <Tooltip content='Lorem ipsum dolor sit amet'>
+          <Tooltip
+            content='Lorem ipsum dolor sit amet'
+            minWidth={'120px'}
+          >
             <Button
               children='Tooltip'
               size='lg'
               fontSize=".8rem"
             />
           </Tooltip>
-          <Tooltip content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'>
+          <Tooltip
+            content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+            minWidth={'300px'}
+          >
             <Button
               children='Tooltip'
               size='lg'
               fontSize=".8rem"
             />
           </Tooltip>
-          <Tooltip content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'>
+          <Tooltip
+            content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+            minWidth={'300px'}
+          >
             <Button
               children='Tooltip'
               size='lg'

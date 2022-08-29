@@ -12,6 +12,7 @@ import { useSequence } from '../../hooks/use-sequence'
 export const Tooltip = ({
   bgColor = 'background100',
   color = 'grey100',
+  minWidth = 'max-content',
   ...props
 }) => {
   const [stage, $stage] = useSequence()
@@ -55,7 +56,7 @@ export const Tooltip = ({
         transform: translateX(-50%) translateY(-${height + 12}px);
 
         .tip {
-          left: 16px;
+          left: 8px;
           transform: rotate(45deg);
         }
       `)
@@ -65,7 +66,7 @@ export const Tooltip = ({
         transform: translateY(-${height + 12}px);
 
         .tip {
-          right: 16px;
+          right: 8px;
           transform: rotate(45deg);
         }
       `)
@@ -96,6 +97,7 @@ export const Tooltip = ({
     <div
       ref={refTooltip}
       css={_css(`
+        z-index: 1;
         ${CLASSES[stage]}        
         ${x}
         background: ${COLORS[bgColor]};
@@ -104,7 +106,8 @@ export const Tooltip = ({
         position: absolute;
         
         transition: .1s opacity ease-in-out;
-        width: 200px;
+        min-width: ${minWidth};
+        max-width: 200px;
       `)}
       className={cn(
         'p-3',
@@ -127,6 +130,7 @@ export const Tooltip = ({
       />
     </div>
     <div
+      className={cn('flex', 'item-center', 'justify-center')}
       onClick={() => {
         if (stage < 2 || stage > 3) {
           $stage.run(1, 2)

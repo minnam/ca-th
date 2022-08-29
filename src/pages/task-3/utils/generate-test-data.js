@@ -20,10 +20,12 @@ export const generateTestData = (days, max, min) => {
       }
     }
 
-
+    const y = max - (max - min) * Math.random() + min
     input.push({
       x: date,
-      y: (max - min) * Math.random() + min,
+      y,
+      val: y,
+      formattedDate: moment(date).format('MMM DD, ddd'),
       highlight: isFirstDOM,
       active,
       label: `${MONTH_NAMES[date.getMonth()]} ${date.getDate()}`,

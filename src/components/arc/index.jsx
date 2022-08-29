@@ -1,18 +1,22 @@
 import { css as _css } from '@emotion/react'
+
+/* Common ======================================================================================= */
 import { COLORS } from '../../common/colors'
 import { cn } from '../../utils/cn'
 
+/* <Arc /> ====================================================================================== */
 export const Arc = ({
   bgColor1 = 'background100',
   bgColor2 = 'background200',
   absolute = false,
   flip = false,
+  css = '',
   ...props
 }) => {
 
   return <div
     css={_css(`
-      ${props.css || ''}
+      ${css}
       background: ${COLORS[bgColor1] || bgColor1};        
       height: 5rem;  
       position: ${absolute ? 'absolute' : 'relative'};      
@@ -37,20 +41,20 @@ export const Arc = ({
     >
       <div
         css={_css(`
-        ${flip ? 'top' : 'bottom'}: -5rem;
-        align-items:center;
-        background: ${COLORS[bgColor2] || bgColor2};        
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        left: 50%;
-        max-height: 10rem;
-        min-height: 10rem;
-        min-width: 15rem;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 120%;
-      `)}
+          ${flip ? 'top' : 'bottom'}: -5rem;
+          align-items:center;
+          background: ${COLORS[bgColor2] || bgColor2};        
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          left: 50%;
+          max-height: 10rem;
+          min-height: 10rem;
+          min-width: 15rem;
+          position: absolute;
+          transform: translateX(-50%);
+          width: 120%;
+        `)}
       />
     </div>
   </div>
